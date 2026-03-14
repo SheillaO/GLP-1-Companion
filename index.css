@@ -1,3 +1,34 @@
+:root {
+    --crimson: #5f0f40;
+    --orchid: #c47ac0;
+    --orange: #fb8b24;
+    --teal: #a7cab1;
+    --ivory: #fffff3;
+}
+ 
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
-    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--ivory);
+    color: var(--crimson);
+    line-height: 1.6;
+}
+ 
+/* Header */
+.header {
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--orchid) 100%);
+    color: white;
+    text-align: center;
+    padding: 40px 20px 60px;
+}
+ .badge {
+    background: var(--orange);
+    color: var(--crimson);
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 16px;
 }
