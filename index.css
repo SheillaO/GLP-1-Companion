@@ -32,3 +32,14 @@ body {
     font-weight: 700;
     margin-bottom: 16px;
 }
+
+ 
+h1 {
+    font-size: 48px;
+    margin-bottom: 8px;
+}
+ 
+.tagline {
+    font-size: 20px;
+    opacity: 0.95;
+}
