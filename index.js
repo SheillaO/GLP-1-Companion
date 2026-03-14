@@ -121,4 +121,32 @@ function trackConversion(type, value) {
   addToHistory(type, value);
   updateStatsDisplay();
 }
- 
+ // Add to history
+function addToHistory(type, value) {
+    let timestamp = new Date().toLocaleString()
+    let historyItem = {
+        type: type,
+        value: value,
+        time: timestamp
+    }
+    
+    conversionHistory.push(historyItem)
+    
+    if (conversionHistory.length > 10) {
+        conversionHistory.shift()
+    }
+    
+    localStorage.setItem("conversionHistory", JSON.stringify(conversionHistory))
+    renderHistory()
+}
+
+// Render history
+function renderHistory() {
+    let historyEl = document.getElementById("history-list")
+    if (!historyEl) return
+    
+    let historyHTML = ""
+    
+    for (let i = conversionHistory.length - 1; i >= 0; i--) {
+        let item = conversionHistory[i]
+        let icon = item.type === "weight" ? "💉" : item.type === "height" ? "📏" : "💧"
