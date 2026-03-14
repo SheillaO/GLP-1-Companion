@@ -289,3 +289,25 @@ if (goalsFromStorage) {
     weightGoals = goalsFromStorage
     renderGoals()
 }
+
+// Add weight goal
+function addGoal() {
+    let goalInput = document.getElementById("goal-input")
+    if (!goalInput) return
+    
+    let goalValue = Number(goalInput.value)
+    
+    if (goalValue <= 0 || isNaN(goalValue)) {
+        alert("Enter a valid goal weight!")
+        return
+    }
+    
+    weightGoals.push({
+        weight: goalValue,
+        date: new Date().toLocaleDateString()
+    })
+    
+    localStorage.setItem("weightGoals", JSON.stringify(weightGoals))
+    goalInput.value = ""
+    renderGoals()
+}
