@@ -239,3 +239,34 @@ function clearHistory() {
         alert("✅ History cleared!")
     }
 }
+// Clear all stats
+function clearStats() {
+    if (confirm("Reset all statistics?")) {
+        totalConversions = 0
+        conversionCount = {
+            weight: 0,
+            height: 0,
+            volume: 0
+        }
+        favoriteUnit = "weight"
+        localStorage.removeItem("conversionStats")
+        updateStatsDisplay()
+        alert("✅ Stats reset!")
+    }
+}
+
+// Export conversions
+function exportConversions() {
+    if (savedConversions.length === 0) {
+        alert("No conversions to export!")
+        return
+    }
+    
+    let exportText = "GLP-1 Companion - Saved Conversions\n\n"
+    
+    for (let i = 0; i < savedConversions.length; i++) {
+        let item = savedConversions[i]
+        exportText += `${item.timestamp}\n`
+        exportText += `${item.original} kg = ${item.kgToPounds} lbs\n`
+        exportText += `${item.original} lbs = ${item.poundsToKg} kg\n\n`
+    }
