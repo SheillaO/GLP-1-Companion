@@ -38,3 +38,11 @@ if (statsFromStorage) {
   updateStatsDisplay();
 }
 
+// NEW: Saved conversions (like your password history!)
+let savedConversions = []
+const savedFromStorage = JSON.parse(localStorage.getItem("savedConversions"))
+ 
+if (savedFromStorage) {
+    savedConversions = savedFromStorage
+    renderSaved()
+}
