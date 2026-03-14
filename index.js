@@ -11,7 +11,6 @@ const massEl = document.getElementById("mass-el");
 const volumeEl = document.getElementById("volume-el");
 const convertBtn = document.getElementById("convert-btn");
 
-// NEW: History tracking (like your Bahari Leads!)
 let conversionHistory = [];
 const historyFromStorage = JSON.parse(
   localStorage.getItem("conversionHistory"),
@@ -22,7 +21,6 @@ if (historyFromStorage) {
   renderHistory();
 }
 
-// NEW: Stats tracking (like your blackjack!)
 let totalConversions = 0;
 let favoriteUnit = "weight";
 let conversionCount = {
@@ -39,7 +37,6 @@ if (statsFromStorage) {
   updateStatsDisplay();
 }
 
-// NEW: Saved conversions (like your password history!)
 let savedConversions = [];
 const savedFromStorage = JSON.parse(localStorage.getItem("savedConversions"));
 
@@ -48,7 +45,7 @@ if (savedFromStorage) {
   renderSaved();
 }
 
-// 1. Length Block (Meters <-> Feet)
+// (Meters <-> Feet)
 convertBtn.addEventListener("click", function () {
   let baseValue = Number(inputEl.value);
 
@@ -65,7 +62,7 @@ convertBtn.addEventListener("click", function () {
   trackConversion("height", baseValue);
 });
 
-// 2. Volume Block (Liters <-> Gallons)
+// (Liters <-> Gallons)
 convertBtn.addEventListener("click", function () {
   let baseValue = Number(inputEl.value);
 
@@ -79,7 +76,7 @@ convertBtn.addEventListener("click", function () {
   volumeEl.textContent = `${baseValue} liters = ${lToG} gallons | ${baseValue} gallons = ${gToL} liters`;
 });
 
-// 3. Mass Block (Kilos <-> Pounds)
+// (Kilos <-> Pounds)
 convertBtn.addEventListener("click", function () {
   let baseValue = Number(inputEl.value);
 
@@ -124,7 +121,6 @@ function trackConversion(type, value) {
   updateStatsDisplay();
 }
 
-// Add to history
 function addToHistory(type, value) {
   let timestamp = new Date().toLocaleString();
   let historyItem = {
@@ -166,7 +162,6 @@ function renderHistory() {
   historyEl.innerHTML = historyHTML || "<p>No conversions yet</p>";
 }
 
-// Update stats display
 function updateStatsDisplay() {
   let statsEl = document.getElementById("stats-display");
   if (!statsEl) return;
@@ -187,7 +182,6 @@ function updateStatsDisplay() {
     `;
 }
 
-// Save current conversion
 function saveCurrentConversion() {
   let baseValue = Number(inputEl.value);
 
@@ -266,7 +260,6 @@ function clearStats() {
   }
 }
 
-// Export conversions
 function exportConversions() {
   if (savedConversions.length === 0) {
     alert("No conversions to export!");
