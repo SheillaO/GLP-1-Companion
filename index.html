@@ -22,8 +22,8 @@
         <section class="problem">
             <h2>Why This Tool Exists</h2>
             <p>Over 40 million people worldwide use Ozempic, Mounjaro, Wegovy, or Zepbound. Yet there's no simple tool
-                for
-                the conversions you need daily:</p>
+                for the conversions you need daily:</p>
+
             <ul>
                 <li><strong>Your scale shows kg, doctor wants lbs</strong> - Who has time for math during weigh-ins?
                 </li>
@@ -37,29 +37,34 @@
             <h2>Quick Converter</h2>
             <p>Enter any number to see instant conversions across all units</p>
 
-            <input type="number" id="input-el" placeholder="Enter a number...">
-            <button id="convert-btn">Convert</button>
+            <div class="input-group">
+                <input type="number" id="input-el" placeholder="Enter a number (e.g., 75 for 75kg)">
+                <button id="convert-btn">Convert</button>
+            </div>
+
             <div class="result-section">
                 <h3>💉 Weight (Kilograms/Pounds)</h3>
-                <p id="mass-el">Enter a number to convert</p>
+                <p id="mass-el" class="result">Enter a number to convert</p>
                 <p class="helper">Track your GLP-1 weight loss progress</p>
             </div>
+
             <div class="result-section">
                 <h3>📏 Height (Meters/Feet)</h3>
-                <p id="length-el">Enter a number to convert</p>
+                <p id="length-el" class="result">Enter a number to convert</p>
                 <p class="helper">For BMI calculations & medical forms</p>
             </div>
+
             <div class="result-section">
                 <h3>💧 Volume (Liters/Gallons)</h3>
-                <p id="volume-el">Enter a number to convert</p>
+                <p id="volume-el" class="result">Enter a number to convert</p>
                 <p class="helper">Daily water intake (hydration matters on GLP-1s!)</p>
             </div>
         </section>
+
         <section class="dosage">
             <h2>Ozempic ↔ Mounjaro Dosage Reference</h2>
             <p class="disclaimer"><strong>⚠️ Educational Only:</strong> Always consult your healthcare provider before
-                switching
-                medications.</p>
+                switching medications.</p>
 
             <div class="cards">
                 <div class="card">
@@ -71,11 +76,13 @@
                     <h4>Ozempic 1 mg → Mounjaro 5-7.5 mg</h4>
                     <p>Most common conversion point</p>
                 </div>
+
                 <div class="card">
                     <h4>Ozempic 2 mg → Mounjaro 10-12.5 mg</h4>
                     <p>Higher dose equivalence</p>
                 </div>
             </div>
+
             <div class="tips">
                 <h3>💡 Switching Tips from Real Users</h3>
                 <ul>
@@ -86,6 +93,7 @@
                 </ul>
             </div>
         </section>
+
         <section class="stats">
             <h2>By The Numbers</h2>
             <div class="stat-grid">
@@ -103,35 +111,41 @@
                 </div>
             </div>
         </section>
+
+        <section class="tracking">
+            <h2>Your Activity</h2>
+
+            <div id="stats-display" class="activity-stats"></div>
+
+            <div class="tracking-section">
+                <h3>📊 Conversion History</h3>
+                <div id="history-list" class="list-container"></div>
+                <button onclick="clearHistory()" class="btn-secondary">Clear History</button>
+            </div>
+
+            <div class="tracking-section">
+                <h3>💾 Saved Conversions</h3>
+                <div id="saved-list" class="list-container"></div>
+                <div class="action-buttons">
+                    <button onclick="saveCurrentConversion()" class="btn-primary">Save Current</button>
+                    <button onclick="exportConversions()" class="btn-secondary">Export All</button>
+                </div>
+            </div>
+
+            <div class="tracking-section">
+                <h3>🎯 Weight Goals</h3>
+                <div class="goal-input-group">
+                    <input type="number" id="goal-input" placeholder="Enter goal weight (kg)">
+                    <button onclick="addGoal()" class="btn-primary">Add Goal</button>
+                </div>
+                <div id="goals-list" class="list-container"></div>
+            </div>
+        </section>
     </main>
-
-    <!-- After the stats section -->
-    <section class="tracking">
-        <h2>Your Activity</h2>
-
-        <div id="stats-display"></div>
-
-        <h3>Conversion History</h3>
-        <div id="history-list"></div>
-        <button onclick="clearHistory()">Clear History</button>
-
-        <h3>Saved Conversions</h3>
-        <div id="saved-list"></div>
-        <button onclick="saveCurrentConversion()">Save Current</button>
-        <button onclick="exportConversions()">Export All</button>
-
-        <h3>Weight Goals</h3>
-        <input type="number" id="goal-input" placeholder="Enter goal weight (kg)">
-        <button onclick="addGoal()">Add Goal</button>
-        <div id="goals-list"></div>
-    </section>
-
-
 
     <footer>
         <p class="medical"><strong>Medical Disclaimer:</strong> This tool is for educational purposes only. Always
-            consult
-            your healthcare provider before making medication changes.</p>
+            consult your healthcare provider before making medication changes.</p>
         <p>Built with ❤️ by Olga · <a href="https://github.com/SheillaO/glp1-companion" target="_blank">GitHub</a> · <a
                 href="https://glp1companion.netlify.app/" target="_blank">Netlify</a></p>
     </footer>

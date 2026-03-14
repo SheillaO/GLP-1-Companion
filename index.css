@@ -5,7 +5,7 @@
     --teal: #a7cab1;
     --ivory: #fffff3;
 }
- 
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -14,7 +14,7 @@ body {
     color: var(--crimson);
     line-height: 1.6;
 }
- 
+
 /* Header */
 .header {
     background: linear-gradient(135deg, var(--crimson) 0%, var(--orchid) 100%);
@@ -22,7 +22,8 @@ body {
     text-align: center;
     padding: 40px 20px 60px;
 }
- .badge {
+
+.badge {
     background: var(--orange);
     color: var(--crimson);
     display: inline-block;
@@ -33,12 +34,11 @@ body {
     margin-bottom: 16px;
 }
 
- 
 h1 {
     font-size: 48px;
     margin-bottom: 8px;
 }
- 
+
 .tagline {
     font-size: 20px;
     opacity: 0.95;
@@ -50,7 +50,7 @@ main {
     margin: -40px auto 40px;
     padding: 0 20px;
 }
- 
+
 section {
     background: white;
     padding: 32px;
@@ -62,30 +62,47 @@ section {
 h2 {
     color: var(--crimson);
     margin-bottom: 16px;
+    font-size: 28px;
 }
- 
+
+h3 {
+    color: var(--crimson);
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
 ul {
     margin-left: 20px;
     margin-top: 16px;
 }
- 
+
 li {
     margin-bottom: 12px;
 }
 
 /* Converter */
+.input-group {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
 input {
-    width: 100%;
+    flex: 1;
     padding: 14px;
     border: 2px solid var(--teal);
     border-radius: 8px;
     font-size: 16px;
-    margin-bottom: 12px;
+    font-family: 'Inter', sans-serif;
 }
- 
+
+input:focus {
+    outline: none;
+    border-color: var(--crimson);
+}
+
 button {
-    width: 100%;
-    padding: 14px;
+    padding: 14px 24px;
     background: var(--crimson);
     color: white;
     border: none;
@@ -93,13 +110,15 @@ button {
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    margin-bottom: 24px;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s ease;
 }
 
 button:hover {
     background: #7a1456;
+    transform: translateY(-1px);
 }
- 
+
 .result-section {
     background: var(--ivory);
     padding: 20px;
@@ -107,19 +126,24 @@ button:hover {
     margin-bottom: 16px;
     border-left: 4px solid var(--orange);
 }
- 
+
 .result-section h3 {
-    color: var(--crimson);
     font-size: 18px;
     margin-bottom: 8px;
+}
+
+.result {
+    font-weight: 600;
+    color: var(--crimson);
+    font-size: 16px;
+    margin-bottom: 4px;
 }
 
 .helper {
     font-size: 13px;
     color: #666;
-    margin-top: 4px;
 }
- 
+
 /* Dosage */
 .disclaimer {
     background: #fff3cd;
@@ -134,17 +158,18 @@ button:hover {
     gap: 16px;
     margin-bottom: 24px;
 }
- 
+
 .card {
     background: var(--ivory);
     padding: 20px;
     border-radius: 8px;
     border: 2px solid var(--teal);
 }
- 
+
 .card h4 {
     color: var(--crimson);
     margin-bottom: 8px;
+    font-size: 16px;
 }
 
 .tips {
@@ -152,35 +177,204 @@ button:hover {
     padding: 20px;
     border-radius: 8px;
 }
- 
+
 .tips h3 {
     margin-bottom: 12px;
 }
- 
+
 /* Stats */
 .stat-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
 }
- 
+
 .stat {
     text-align: center;
     padding: 20px;
     background: var(--ivory);
     border-radius: 8px;
 }
- 
+
 .number {
     font-size: 32px;
     font-weight: 800;
     color: var(--orchid);
     margin-bottom: 8px;
 }
- 
+
 .label {
     font-size: 13px;
     color: #666;
+}
+
+/* Tracking Section - THE NEW STYLING! */
+.tracking {
+    background: white;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(95, 15, 64, 0.1);
+}
+
+.activity-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(95, 15, 64, 0.05) 0%, rgba(196, 122, 192, 0.05) 100%);
+    border-radius: 8px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 16px;
+    background: white;
+    border-radius: 8px;
+    border: 2px solid var(--teal);
+}
+
+.stat-item strong {
+    display: block;
+    font-size: 28px;
+    color: var(--orchid);
+    margin-bottom: 4px;
+}
+
+.stat-item span {
+    font-size: 12px;
+    color: #666;
+}
+
+.tracking-section {
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.tracking-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.list-container {
+    background: var(--ivory);
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    min-height: 60px;
+}
+
+.list-container p {
+    color: #999;
+    font-style: italic;
+    text-align: center;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: white;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    border-left: 3px solid var(--orange);
+}
+
+.history-item span:first-child {
+    font-weight: 600;
+    color: var(--crimson);
+}
+
+.time {
+    font-size: 12px;
+    color: #999;
+}
+
+.saved-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: white;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    border-left: 3px solid var(--teal);
+}
+
+.saved-item strong {
+    color: var(--crimson);
+}
+
+.delete-btn {
+    padding: 6px 12px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: #c82333;
+}
+
+.goal-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: white;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    border-left: 3px solid var(--orchid);
+}
+
+.goal-item span {
+    color: var(--crimson);
+    font-weight: 600;
+}
+
+.goal-item button {
+    padding: 6px 16px;
+    background: #28a745;
+    font-size: 12px;
+}
+
+.goal-item button:hover {
+    background: #218838;
+}
+
+.action-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.goal-input-group {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.btn-primary {
+    background: var(--crimson);
+}
+
+.btn-primary:hover {
+    background: #7a1456;
+}
+
+.btn-secondary {
+    background: var(--teal);
+    color: var(--crimson);
+}
+
+.btn-secondary:hover {
+    background: #8fb89d;
 }
 
 /* Footer */
@@ -190,22 +384,43 @@ footer {
     padding: 32px 20px;
     text-align: center;
 }
- 
+
 .medical {
     font-size: 13px;
     margin-bottom: 16px;
     opacity: 0.9;
 }
- 
+
 footer a {
     color: var(--orange);
     text-decoration: none;
+    font-weight: 600;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
 
 /* Mobile */
 @media (max-width: 640px) {
     h1 { font-size: 32px; }
-    .stat-grid { grid-template-columns: 1fr; }
-    section { padding: 24px 20px; }
+    
+    .stat-grid,
+    .activity-stats,
+    .action-buttons { 
+        grid-template-columns: 1fr; 
+    }
+    
+    section { 
+        padding: 24px 20px; 
+    }
+    
+    .input-group,
+    .goal-input-group {
+        flex-direction: column;
+    }
+    
+    button {
+        width: 100%;
+    }
 }
- 
