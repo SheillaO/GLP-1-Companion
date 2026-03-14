@@ -229,3 +229,13 @@ function deleteSaved(index) {
     localStorage.setItem("savedConversions", JSON.stringify(savedConversions))
     renderSaved()
 }
+
+// Clear all history
+function clearHistory() {
+    if (confirm("Clear all conversion history?")) {
+        conversionHistory = []
+        localStorage.removeItem("conversionHistory")
+        renderHistory()
+        alert("✅ History cleared!")
+    }
+}
