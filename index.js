@@ -180,3 +180,52 @@ function updateStatsDisplay() {
             <span>Most Used</span>
         </div>
     `
+    }
+ 
+// Save current conversion
+function saveCurrentConversion() {
+    let baseValue = Number(inputEl.value)
+    
+    if (baseValue <= 0 || isNaN(baseValue)) {
+        alert("Enter a number to save!")
+        return
+    }
+    
+    let kToP = (baseValue * 2.204).toFixed(2)
+    let pToK = (baseValue / 2.204).toFixed(2)
+    
+    let savedItem = {
+        original: baseValue,
+        kgToPounds: kToP,
+        poundsToKg: pToK,
+        timestamp: new Date().toLocaleString()
+    }
+    
+    savedConversions.push(savedItem)
+    localStorage.setItem("savedConversions", JSON.stringify(savedConversions))
+
+    // Render saved conversions
+function renderSaved() {
+    let savedEl = document.getElementById("saved-list")
+    if (!savedEl) return
+    
+    let savedHTML = ""
+    
+    for (let i = 0; i < savedConversions.length; i++) {
+        let item = savedConversions[i]
+        savedHTML += `
+            <div class="saved-item">
+                <strong>${item.original} kg = ${item.kgToPounds} lbs</strong>
+                <button onclick="deleteSaved(${i})" class="delete-btn">Delete</button>
+            </div>
+        `
+    }
+     savedEl.innerHTML = savedHTML || "<p>No saved conversions</p>"
+}
+ 
+// Delete saved conversion
+function deleteSaved(index) {
+    savedConversions.splice(index, 1)
+    localStorage.setItem("savedConversions", JSON.stringify(savedConversions))
+    renderSaved()
+}
