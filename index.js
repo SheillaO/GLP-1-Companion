@@ -37,7 +37,23 @@ convertBtn.addEventListener("click", function() {
     massEl.textContent = `${baseValue} kilos = ${kToP} pounds | ${baseValue} pounds = ${pToK} kilos`
 })
 
- 
+conversionHistory = []
+addToHistory(type, value)
+renderHistory()  // Shows last 10 conversions
 
+ savedConversions = []
+saveCurrentConversion()  // One-click save
+renderSaved()  // Display saved list
+deleteSaved(index)  // Remove items
 
+totalConversions = 0
+conversionCount = {weight: 0, height: 0, volume: 0}
+favoriteUnit = "weight"  // Auto-calculated!
 
+weightGoals = []
+addGoal()  // Set target weight
+renderGoals()  // Show list
+deleteGoal(index)  // Mark as "reached"
+
+clearHistory()  // Reset history with confirmation
+clearStats()  // Reset all statistics
