@@ -43,3 +43,18 @@ h1 {
     font-size: 20px;
     opacity: 0.95;
 }
+
+/* Main */
+main {
+    max-width: 800px;
+    margin: -40px auto 40px;
+    padding: 0 20px;
+}
+ 
+section {
+    background: white;
+    padding: 32px;
+    margin-bottom: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(95, 15, 64, 0.1);
+}
