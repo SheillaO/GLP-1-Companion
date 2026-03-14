@@ -4,8 +4,11 @@
  
 A free web app designed for the 40+ million people worldwide using Ozempic, Mounjaro, Wegovy, or Zepbound. Solve the daily headache of unit conversions, track progress, and reference dosage information - all without spreadsheets or confusion.
  
+
 <div align="center">
-  <img src="/glp.png" alt="GLP-1 Companion" width="400">
+  <a href="https://glp-1-companion.netlify.app/">
+    <img src="/glp.png" alt="GLP-1 Companion" width="400">
+  </a>
 </div>
 
 
