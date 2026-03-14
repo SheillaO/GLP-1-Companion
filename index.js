@@ -150,3 +150,33 @@ function renderHistory() {
     for (let i = conversionHistory.length - 1; i >= 0; i--) {
         let item = conversionHistory[i]
         let icon = item.type === "weight" ? "💉" : item.type === "height" ? "📏" : "💧"
+
+          historyHTML += `
+            <div class="history-item">
+                <span>${icon} ${item.value} (${item.type})</span>
+                <span class="time">${item.time}</span>
+            </div>
+        `
+    }
+    historyEl.innerHTML = historyHTML || "<p>No conversions yet</p>"
+}
+ 
+// Update stats display
+function updateStatsDisplay() {
+    let statsEl = document.getElementById("stats-display")
+    if (!statsEl) return
+    
+    statsEl.innerHTML = `
+        <div class="stat-item">
+            <strong>${totalConversions}</strong>
+            <span>Total Conversions</span>
+        </div>
+        <div class="stat-item">
+            <strong>${conversionCount.weight}</strong>
+            <span>Weight Conversions</span>
+        </div>
+        <div class="stat-item">
+            <strong>${favoriteUnit}</strong>
+            <span>Most Used</span>
+        </div>
+    `
