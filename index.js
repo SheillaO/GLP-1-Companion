@@ -9,3 +9,21 @@ const lengthEl = document.getElementById("length-el");
 const massEl = document.getElementById("mass-el");
 const volumeEl = document.getElementById("volume-el");
 const convertBtn = document.getElementById("convert-btn");
+
+// NEW: History tracking (like your Bahari Leads!)
+let conversionHistory = []
+const historyFromStorage = JSON.parse(localStorage.getItem("conversionHistory"))
+ 
+if (historyFromStorage) {
+    conversionHistory = historyFromStorage
+    renderHistory()
+}
+ 
+// NEW: Stats tracking (like your blackjack!)
+let totalConversions = 0
+let favoriteUnit = "weight"
+let conversionCount = {
+    weight: 0,
+    height: 0,
+    volume: 0
+}
