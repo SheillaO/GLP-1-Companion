@@ -270,3 +270,22 @@ function exportConversions() {
         exportText += `${item.original} kg = ${item.kgToPounds} lbs\n`
         exportText += `${item.original} lbs = ${item.poundsToKg} kg\n\n`
     }
+
+        let blob = new Blob([exportText], {type: 'text/plain'})
+    let url = URL.createObjectURL(blob)
+    let link = document.createElement('a')
+    link.href = url
+    link.download = 'glp1-conversions.txt'
+    link.click()
+    
+    alert("✅ Conversions exported!")
+}
+ 
+// Weight goals tracker
+let weightGoals = []
+const goalsFromStorage = JSON.parse(localStorage.getItem("weightGoals"))
+ 
+if (goalsFromStorage) {
+    weightGoals = goalsFromStorage
+    renderGoals()
+}
