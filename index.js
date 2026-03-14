@@ -46,3 +46,21 @@ if (savedFromStorage) {
     savedConversions = savedFromStorage
     renderSaved()
 }
+
+// 1. Length Block (Meters <-> Feet)
+convertBtn.addEventListener("click", function() {
+    let baseValue = Number(inputEl.value)
+    
+    if (baseValue <= 0 || isNaN(baseValue)) {
+        alert("Please enter a valid number!")
+        return
+    }
+    
+    const mToF = (baseValue * 3.281).toFixed(2)
+    const fToM = (baseValue / 3.281).toFixed(2)
+    
+    lengthEl.textContent = `${baseValue} meters = ${mToF} feet | ${baseValue} feet = ${fToM} meters`
+    
+    trackConversion("height", baseValue)
+})
+ 
