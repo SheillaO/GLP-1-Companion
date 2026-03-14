@@ -11,19 +11,30 @@ const volumeEl = document.getElementById("volume-el");
 const convertBtn = document.getElementById("convert-btn");
 
 // NEW: History tracking (like your Bahari Leads!)
-let conversionHistory = []
-const historyFromStorage = JSON.parse(localStorage.getItem("conversionHistory"))
- 
+let conversionHistory = [];
+const historyFromStorage = JSON.parse(
+  localStorage.getItem("conversionHistory"),
+);
+
 if (historyFromStorage) {
-    conversionHistory = historyFromStorage
-    renderHistory()
+  conversionHistory = historyFromStorage;
+  renderHistory();
 }
- 
+
 // NEW: Stats tracking (like your blackjack!)
-let totalConversions = 0
-let favoriteUnit = "weight"
+let totalConversions = 0;
+let favoriteUnit = "weight";
 let conversionCount = {
-    weight: 0,
-    height: 0,
-    volume: 0
+  weight: 0,
+  height: 0,
+  volume: 0,
+};
+
+const statsFromStorage = JSON.parse(localStorage.getItem("conversionStats"));
+if (statsFromStorage) {
+  totalConversions = statsFromStorage.total;
+  conversionCount = statsFromStorage.counts;
+  favoriteUnit = statsFromStorage.favorite;
+  updateStatsDisplay();
 }
+
