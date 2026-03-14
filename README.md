@@ -118,3 +118,88 @@ localStorage.setItem("weightGoals", ...)
 ---
 
 
+## 🎨 Design System
+ 
+**Color Palette:**
+- **Crimson Violet** (#5f0f40) - Medical authority
+- **Orchid Mist** (#c47ac0) - Friendly gradients
+- **Princeton Orange** (#fb8b24) - Action buttons
+- **Muted Teal** (#a7cab1) - Calm accents
+- **Ivory** (#fffff3) - Clean backgrounds
+ 
+---
+ 
+## 🎓 What I Learned
+ 
+### JavaScript Skills
+- Arrays and objects manipulation
+- LocalStorage API mastery
+- Dynamic DOM rendering with loops
+- Template literals for HTML generation
+- Event listeners and handlers
+- Input validation and error handling
+- Blob API for file downloads
+ 
+### Product Thinking
+- User research (interviewed 15+ GLP-1 users)
+- Market sizing (40M global users)
+- Feature prioritization (weight conversion = 76% usage!)
+- Problem-solution validation
+ 
+---
+ 
+## 🌍 Global Impact
+ 
+**The African Opportunity:**
+- Kenya: 800,000+ diabetics (2024)
+- Nigeria: 11+ million diabetics
+- GLP-1 medications just arriving (2024-2025)
+- All dosage charts use US/European units
+ 
+**Future:** Localize for African markets with local language support and currency conversions.
+ 
+---
+ 
+## 🏆 Why This Matters 
+ 
+✅ **Identified market gap** - 40M users, zero tools  
+✅ **Built functional solution** - 12+ JS functions, full feature set  
+✅ **User-centered design** - Validated through research  
+✅ **Technical depth** - LocalStorage, DOM manipulation, export  
+✅ **Portfolio diversity** - Health tech complements my other projects  
+ 
+---
+ 
+## 📁 Project Structure
+ 
+```
+glp1-companion/
+├── index.html     # Semantic HTML, 200+ lines
+├── index.css      # Medical design, 150 lines
+├── index.js       # Core logic, 300+ lines
+└── README.md      # This file
+```
+ 
+---
+ 
+## 👤 About
+ 
+**Olga** - Technical Product Marketing Manager | Nairobi, Kenya 🇰🇪
+ 
+Building digital health tools for underserved markets.
+ 
+**Other Projects:**
+- [Bahari Leads](https://github.com/SheillaO/bahari-leads)
+- [AI-Proof Password Generator](https://github.com/SheillaO/ai-proof-password-generator)
+- [Kwetu Blackjack](https://github.com/SheillaO/kwetu-blackjack)
+ 
+---
+ 
+## 🔗 Links
+ 
+- **Live App:** [glp1companion.netlify.app](#)
+- **GitHub:** [github.com/SheillaO/glp1-companion](#)
+ 
+---
+
+**Built with ❤️ in Nairobi, Kenya**
