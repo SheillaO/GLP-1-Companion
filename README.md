@@ -6,3 +6,6 @@ A free web app designed for the 40+ million people worldwide using Ozempic, Moun
  
 ---
 
+## 🚀 Live Demo
+
+[View Live Demo](https://github.com/SheillaO/GLP-1-Companion)
