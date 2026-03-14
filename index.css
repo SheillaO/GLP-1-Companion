@@ -72,3 +72,59 @@ ul {
 li {
     margin-bottom: 12px;
 }
+
+/* Converter */
+input {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid var(--teal);
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+ 
+button {
+    width: 100%;
+    padding: 14px;
+    background: var(--crimson);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 24px;
+}
+
+button:hover {
+    background: #7a1456;
+}
+ 
+.result-section {
+    background: var(--ivory);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    border-left: 4px solid var(--orange);
+}
+ 
+.result-section h3 {
+    color: var(--crimson);
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.helper {
+    font-size: 13px;
+    color: #666;
+    margin-top: 4px;
+}
+ 
+/* Dosage */
+.disclaimer {
+    background: #fff3cd;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--orange);
+}
