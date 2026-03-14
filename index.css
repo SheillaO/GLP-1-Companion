@@ -128,3 +128,21 @@ button:hover {
     margin-bottom: 20px;
     border-left: 4px solid var(--orange);
 }
+
+.cards {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+ 
+.card {
+    background: var(--ivory);
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid var(--teal);
+}
+ 
+.card h4 {
+    color: var(--crimson);
+    margin-bottom: 8px;
+}
