@@ -64,3 +64,61 @@ convertBtn.addEventListener("click", function() {
     trackConversion("height", baseValue)
 })
  
+// 2. Volume Block (Liters <-> Gallons)
+convertBtn.addEventListener("click", function() {
+    let baseValue = Number(inputEl.value)
+    
+    if (baseValue <= 0 || isNaN(baseValue)) {
+        return
+    }
+    
+    const lToG = (baseValue * 0.264).toFixed(2)
+    const gToL = (baseValue / 0.264).toFixed(2)
+    
+    volumeEl.textContent = `${baseValue} liters = ${lToG} gallons | ${baseValue} gallons = ${gToL} liters`
+})
+
+// 3. Mass Block (Kilos <-> Pounds)
+convertBtn.addEventListener("click", function() {
+    let baseValue = Number(inputEl.value)
+    
+    if (baseValue <= 0 || isNaN(baseValue)) {
+        return
+    }
+    
+    const kToP = (baseValue * 2.204).toFixed(2)
+    const pToK = (baseValue / 2.204).toFixed(2)
+    
+    massEl.textContent = `${baseValue} kilos = ${kToP} pounds | ${baseValue} pounds = ${pToK} kilos`
+    
+    trackConversion("weight", baseValue)
+})
+
+// Track conversions
+function trackConversion(type, value) {
+  totalConversions += 1;
+  conversionCount[type] += 1;
+
+  if (
+    conversionCount.weight > conversionCount.height &&
+    conversionCount.weight > conversionCount.volume
+  ) {
+    favoriteUnit = "weight";
+  } else if (conversionCount.height > conversionCount.volume) {
+    favoriteUnit = "height";
+  } else {
+    favoriteUnit = "volume";
+  }
+  localStorage.setItem(
+    "conversionStats",
+    JSON.stringify({
+      total: totalConversions,
+      counts: conversionCount,
+      favorite: favoriteUnit,
+    }),
+  );
+
+  addToHistory(type, value);
+  updateStatsDisplay();
+}
+ 
