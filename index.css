@@ -58,3 +58,17 @@ section {
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(95, 15, 64, 0.1);
 }
+
+h2 {
+    color: var(--crimson);
+    margin-bottom: 16px;
+}
+ 
+ul {
+    margin-left: 20px;
+    margin-top: 16px;
+}
+ 
+li {
+    margin-bottom: 12px;
+}
