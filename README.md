@@ -30,11 +30,8 @@ When I researched the GLP-1 medication market, I discovered a critical gap: **mi
 - **App confusion** - MyFitnessPal shows kg, insurance forms require lbs
 - **Progress tracking chaos** - Manual conversions = errors and frustration
  
- **The Market:**
-- 40+ million GLP-1 users globally (2025)
-- Market growing 25% annually
-- Users span 100+ countries with different measurement systems
-- Yet: **Zero** dedicated conversion tools for this audience
+## 40M+ Users. 25% Annual Growth. 100+ Countries.
+The GLP-1 market is massive, yet patients still lack basic, dedicated tools to convert dosages and measurements across different global standards. We're changing that.
  
 ---
 
